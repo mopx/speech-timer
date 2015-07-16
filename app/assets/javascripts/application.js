@@ -12,24 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 //= require flipclock
+//= require faye
 //= require bootstrap
-//= require_tree .
+// require_tree .
 
-$(function() {
-  var clock = new FlipClock($('#counter_div'), {
-    autoStart: true,
-    countdown: true,
-    clockFace: 'MinuteCounter',
-    callbacks: {
-      stop: function() {
-        alert("BOOM!");
-      }
-    },
+var client;
+client = new Faye.Client('/faye');
 
+function startTimer(name, minutes) {
+  publication = client.publish('/timer', {
+    message: { name: name, minutes: minutes },
   });
-  clock.setTime(10);
-  clock.start();
-
-});
+  return false;
+}

@@ -32,7 +32,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'thin'
 gem 'haml-rails'
+gem 'faye', git: "https://github.com/faye/faye.git"
+gem 'faye-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
