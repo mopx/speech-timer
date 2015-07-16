@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-}
-
 body,html{
     height: 100%;
     margin: 0;
@@ -12,7 +9,7 @@ body,html{
 }
 
 .v-wrap{
-  background-color: #000000;
+  background-color: #111;
     height: 100%;
     text-align: center;
     white-space: nowrap;
@@ -31,4 +28,17 @@ body,html{
     white-space: normal;
     padding: 0 1em;
     //background: #EEE;
+
+    zoom: 3;
+    -moz-transform: scale(3);
+}
+
+#name {
+  font-size: 2em;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.flip-clock-divider .flip-clock-label {
+  color: #fff;
 }

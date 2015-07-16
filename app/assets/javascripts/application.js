@@ -22,8 +22,11 @@ var client;
 client = new Faye.Client('/faye');
 
 function startTimer(name, minutes) {
-  publication = client.publish('/timer', {
-    message: { name: name, minutes: minutes },
-  });
+  publication = client.publish('/timer', { stop: false, name: name, minutes: minutes });
+  return false;
+}
+
+function stopTimer() {
+  publication = client.publish('/timer', { stop: true });
   return false;
 }
