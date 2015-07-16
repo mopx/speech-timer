@@ -22,8 +22,14 @@ $(function() {
     autoStart: true,
     countdown: true,
     clockFace: 'MinuteCounter',
+    callbacks: {
+      stop: function() {
+        alert("BOOM!");
+      }
+    },
+
   });
-  clock.setTime(1200);
+  clock.setTime(10);
   clock.start();
 
 });
